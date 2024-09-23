@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos</title>
+    <style>
+        .corner-text {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        body {
+            background-image: url('tilin.jpg');
+            background-size: cover;
+            background-position: center; 
+            font-family: 'Helvetica Neue', Arial, sans-serif; 
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white; 
+            position: relative; 
+            overflow: hidden; 
+        }
+
+        h1 {
+            font-family: 'Comic Sans MS', cursive, sans-serif; 
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .video-container {
+            background-color: rgba(0, 0, 0, 0.8); 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 640px;
+            height: 360px; 
+            border: 5px solid #333; 
+            border-radius: 10px; 
+        }
+
+        .vertical-text {
+            position: absolute;
+            left: 100px; 
+            top: 50%; 
+            transform: translateY(-50%) rotate(30deg); 
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-size: 1.5em;
+            color: rgb(0, 0, 0); 
+            white-space: nowrap; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="corner-text">
+        Gabriel Cárdenas y Laura Camargo<br>
+        Curso: 9°B
+    </div>
+
+    <div class="video-container">
+        <h1>Conociendo el negocio</h1>
+
+        <iframe src="https://www.youtube.com/embed/6LEbZF0KHYQ" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        document.addEventListener('mousemove', (event) => {
+            const x = (event.clientX / window.innerWidth) * 100;
+            const y = (event.clientY / window.innerHeight) * 100;
+
+            document.body.style.backgroundPosition = `${x}% ${y}%`;
+        });
+    </script>
+
+</body>
+</html>
